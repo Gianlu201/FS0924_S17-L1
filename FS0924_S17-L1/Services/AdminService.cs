@@ -112,5 +112,19 @@ namespace FS0924_S17_L1.Services
                 return false;
             }
         }
+
+        public async Task<bool> DeleteBookByIdAsync(Guid id)
+        {
+            var book = await _context.Books.FindAsync(id);
+
+            if (book == null)
+            {
+                return false;
+            }
+
+            _context.Books.Remove(book);
+
+            return await SaveAsync();
+        }
     }
 }

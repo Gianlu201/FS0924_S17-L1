@@ -76,5 +76,18 @@ namespace FS0924_S17_L1.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [HttpGet("Admin/Delete/{id:guid}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var result = await _adminService.DeleteBookByIdAsync(id);
+
+            if (!result)
+            {
+                TempData["Error"] = "Error while deleting entity from database";
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }
