@@ -17,11 +17,10 @@ namespace FS0924_S17_L1.Models
 
         [Required]
         [StringLength(50)]
-        public string Category { get; set; }
+        public required string Category { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public required string Availability { get; set; }
+        public required bool Available { get; set; }
 
         public string? Cover { get; set; }
     }

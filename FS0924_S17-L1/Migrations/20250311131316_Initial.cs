@@ -19,7 +19,7 @@ namespace FS0924_S17_L1.Migrations
                     Title = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Author = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Category = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Availability = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Available = table.Column<bool>(type: "bit", maxLength: 50, nullable: false),
                     Cover = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>

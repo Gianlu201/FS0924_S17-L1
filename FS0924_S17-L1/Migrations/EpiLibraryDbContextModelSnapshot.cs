@@ -33,10 +33,9 @@ namespace FS0924_S17_L1.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("Availability")
-                        .IsRequired()
+                    b.Property<bool>("Available")
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Category")
                         .IsRequired()

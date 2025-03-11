@@ -14,6 +14,7 @@ builder.Services.AddDbContext<EpiLibraryDbContext>(options =>
 );
 
 builder.Services.AddScoped<BookService>();
+builder.Services.AddScoped<AdminService>();
 
 var app = builder.Build();
 

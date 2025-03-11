@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FS0924_S17_L1.Migrations
 {
     [DbContext(typeof(EpiLibraryDbContext))]
-    [Migration("20250310143525_Initial")]
+    [Migration("20250311131316_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -36,10 +36,9 @@ namespace FS0924_S17_L1.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("Availability")
-                        .IsRequired()
+                    b.Property<bool>("Available")
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Category")
                         .IsRequired()
