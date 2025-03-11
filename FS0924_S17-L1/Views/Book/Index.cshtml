@@ -4,33 +4,30 @@
     ViewData["Title"] = "All Books";
 }
 
-@if (Model.Books != null && Model.Books.Any())
-{
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Category</th>
-                <th>Cover</th>
-            </tr>
-        </thead>
-        <tbody>
+<div class="container">
+    <h1>All books</h1>
+    @if (Model.Books != null && Model.Books.Any())
+    {
+        <div class="row">
             @foreach (var book in Model.Books)
             {
-                <tr>
-                    <td>@book.Id</td>
-                    <td>@book.Title</td>
-                    <td>@book.Author</td>
-                    <td>@book.Category</td>
-                    <td>@book.Cover</td>
-                </tr>
+                var available = book.Available ? "opacity-50" : "";
+
+                <div class="col-lg-2 mb-3">
+                    <div class="card" style="max-width: 18rem;">
+                        <img src=@book.Cover class="img-fluid @available" alt=@book.Title style="max-height: 250px">
+                        <div class="card-body">
+                            <h6 class="card-title">@book.Title</h6>
+                        </div>
+                    </div>
+                </div>
             }
-        </tbody>
-    </table>
-    
-} else
-{
-    <p>No book found!</p>
-}
+        </div>
+
+
+    }
+    else
+    {
+        <p>No book found!</p>
+    }
+</div>
