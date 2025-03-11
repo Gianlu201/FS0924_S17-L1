@@ -33,7 +33,7 @@
                     <td>@book.Category</td>
                     <td>@(book.Available?"Yes":"No")</td>
                     <td>
-                        <a class="btn btn-warning">Edit</a>
+                        <a class="btn btn-warning" asp-controller="Admin" asp-action="Edit" asp-route-id=@book.Id>Edit</a>
                         <a class="btn btn-danger">Delete</a>
                     </td>
                 </tr>

@@ -1,0 +1,45 @@
+﻿@model EditBookViewModel
+
+@{
+    ViewData["Title"] = "Edit book - Admin";
+}
+
+<form method="post" asp-controller="Admin" asp-action="Edit">
+    <div class="mb-3">
+        <label class="form-label" for="title" asp-for="Title"></label>
+        <input id="title" class="form-control" asp-for="Title" />
+        <span class="text-danger" asp-validation-for="Title"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="author" asp-for="Author"></label>
+        <input id="author" class="form-control" asp-for="Author" />
+        <span class="text-danger" asp-validation-for="Author"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="category" asp-for="Category"></label>
+        <input id="category" class="form-control" asp-for="Category" />
+        <span class="text-danger" asp-validation-for="Category"></span>
+    </div>
+
+    <div class="mb-3">
+        <input type="checkbox" id="available" class="form-check-input me-1" asp-for="Available" />
+        <label class="form-check-label" for="available" asp-for="Available"></label>
+        <span class="text-danger" asp-validation-for="Available"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="cover" asp-for="Cover"></label>
+        <input id="cover" class="form-control" asp-for="Cover" />
+    </div>
+
+    <div>
+        <button class="btn btn-success">Save</button>
+    </div>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
